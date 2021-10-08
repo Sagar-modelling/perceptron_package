@@ -1,11 +1,11 @@
 import numpy as np 
 
 class Perceptron:
-  def __init__(self,lr,epochs):
+  def __init__(self,eta,epochs):
     np.random.seed(42)
     self.weights = np.random.randn(3) * 10**-4
     print(f"intial weights brfore training: {self.weights}")
-    self.lr = lr
+    self.eta = eta
     self.epochs = epochs    #self declares variable as global for all the methods
 
   def activationFunction(self,inputs,weights): 
@@ -28,7 +28,7 @@ class Perceptron:
       print(f"prdicted value after forward pass: \n{y_hat}")
       self.error = self.y - y_hat
       print(f"error : \n{self.error}")
-      self.weights = self.weights + self.lr * np.dot(X_with_bias.T, self.error) #backward propogation
+      self.weights = self.weights + self.eta * np.dot(X_with_bias.T, self.error) #backward propogation
       print(f"updated weights after epoch : \n{epoch}/{self.epochs} : \n{self.weights}")
       print("######"*10)
 
