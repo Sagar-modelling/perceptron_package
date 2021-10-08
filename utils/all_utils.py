@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import joblib #for saving model as a binary file
 from matplotlib.colors import ListedColormap
-import model
 plt.style.use("fivethirtyeight") #style of graphs
 import os
 
@@ -13,19 +12,11 @@ def prepare_data(df):
   y= df["y"]
   return X,y
 
-inputs = np.array([[1,1],[0,0]])
-model.predict(inputs)
-
 def save_model(model,filename):
   model_dir  = "models"
   os.makedirs(model_dir, exist_ok=True)
   filepath = os.path.join(model_dir, filename)#models/filename
   joblib.dump(model, filepath)
-
-save_model(model, "and.model")
-
-loaded_model = joblib.load('/content/drive/MyDrive/perceptron python/models/and.model')
-loaded_model.predict(inputs)
 
 def save_plot(df, file_name, model):
   def _create_base_plot(df):  #internal function
@@ -67,17 +58,3 @@ def save_plot(df, file_name, model):
   os.makedirs(plot_dir, exist_ok=True)
   plotpath = os.path.join(plot_dir, file_name)   #plots/filename
   plt.savefig(plotpath)
-
-save_plot(df,"or.png",model_OR)
-save_plot(df,"and.png",model_AND)
-
-def save_model(model,filename):
-  model_dir  = "models"
-  os.makedirs(model_dir, exist_ok=True)
-  filepath = os.path.join(model_dir, filename)#models/filename
-  joblib.dump(model, filepath)
-
-save_model(model, "and.model")
-
-loaded_model = joblib.load('/content/drive/MyDrive/perceptron python/models/and.model')
-loaded_model.predict(inputs)
