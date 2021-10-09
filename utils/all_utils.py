@@ -5,6 +5,7 @@ import joblib #for saving model as a binary file
 from matplotlib.colors import ListedColormap
 plt.style.use("fivethirtyeight") #style of graphs
 import os
+import logging
 
 def prepare_data(df):
   """It is used to seperate the dependent and independent features
@@ -15,7 +16,7 @@ def prepare_data(df):
   Returns:
       tuple: It returns tuples of dependent and Independent Variables
   """
-
+  logging.info("Preparing data by segregating dependent and independent Variables")
   X = df.drop("y", axis=1)
 
   y= df["y"]
@@ -28,11 +29,13 @@ def save_model(model,filename):
       model (python object): trained model
       filename (str): path to save the trained model
   """
+  logging.info("Saving the trained model")
 
   model_dir  = "models"
   os.makedirs(model_dir, exist_ok=True)
   filepath = os.path.join(model_dir, filename)#models/filename
   joblib.dump(model, filepath)
+  logging.info(f"Saved the trained model to {filepath}")
 
 def save_plot(df, file_name, model):
   """
@@ -43,6 +46,7 @@ def save_plot(df, file_name, model):
   """
 
   def _create_base_plot(df):  #internal function
+    logging.info("Creating the base plot")
     df.plot(kind="scatter", x="x1", y="x2", c="y", s=100, cmap="winter")
     plt.axhline(y=0, color = "black", linestyle="--",linewidth = 1)
     plt.axvline(x=0, color = "black", linestyle="--",linewidth = 1)
@@ -50,6 +54,7 @@ def save_plot(df, file_name, model):
     figure.set_size_inches(10,8)
 
   def _plot_decision_region(X,y,classifier,resolution=0.02):  #internal function
+    logging.info("plotting the decision region")
     colors = ("red", "blue", "lightgreen", "gray", "cyan")
     cmap = ListedColormap(colors[: len(np.unique(y))])
 
@@ -61,8 +66,8 @@ def save_plot(df, file_name, model):
 
     xx1, xx2 = np.meshgrid(np.arange(x1_min, x1_max, resolution), 
                            np.arange(x2_min, x2_max, resolution))
-    print(xx1)
-    print(xx1.ravel())
+    logging.info(xx1)
+    logging.info(xx1.ravel())
     
     Z = classifier.predict(np.array([xx1.ravel(),xx2.ravel()]).T)
     Z = Z.reshape(xx1.shape)
@@ -81,3 +86,5 @@ def save_plot(df, file_name, model):
   os.makedirs(plot_dir, exist_ok=True)
   plotpath = os.path.join(plot_dir, file_name)   #plots/filename
   plt.savefig(plotpath)
+  
+  logging.info(f"Saving the plots to {plotpath}")
