@@ -6,3 +6,7 @@ Perceptron Implementation using OR,AND,XOR and NAND gates.
 ```bash
 git add . && git commit -m "docstring updated" && git push origin main
 ```
+
+```bash
+cp Sample\ Notebooks/demo.ipynb .
+```

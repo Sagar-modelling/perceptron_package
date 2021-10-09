@@ -1,3 +1,8 @@
+"""
+Author: Sagar
+email: sagariit.kanpur1@gmail.com
+"""
+
 from utils.model import Perceptron
 from utils.all_utils import prepare_data, save_plot, save_model
 import pandas as pd
@@ -13,7 +18,6 @@ def main(data, eta, epochs, filename, plotfilename):
       model.fit(X, y)
 
       _ = model.total_loss()
-
       save_model(model,filename=filename)
       save_plot(df,plotfilename, model)
 
