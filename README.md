@@ -14,6 +14,22 @@ cp Sample\ Notebooks/demo.ipynb .
 ```
 [Github Handbook](https://guides.github.com/introduction/git-handbook/)
 
+# Dataset
+### AND
+x1 | x2 | y         
+-|-|-
+0|0|0
+0|1|0
+1|0|0
+1|1|1
+### 0R
+x1 | x2 | y
+-|-|-
+0|0|0
+0|1|1
+1|0|1
+1|1|1
+    
 # Python code for perceptron class
 ```python
 class Perceptron:
