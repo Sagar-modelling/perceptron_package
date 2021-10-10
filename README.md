@@ -3,17 +3,6 @@ Perceptron Implementation using OR,AND,XOR and NAND gates.
 
 # Info about perceptron(Single Layer Neural Network)
 <a href="https://analyticsindiamag.com/perceptron-is-the-only-neural-network-without-any-hidden-layer/">Visit analyticsindiamag.com!</a>
-# Commands used-
-
-```bash
-git add . && git commit -m "docstring updated" && git push origin main
-```
-
-```bash
-cp Sample\ Notebooks/demo.ipynb .
-```
-[Github Handbook](https://guides.github.com/introduction/git-handbook/)
-
 # Dataset
 ### AND
 x1 | x2 | y         
@@ -72,10 +61,7 @@ class Perceptron:
     total_loss = np.sum(self.error)
     logging.info(f"total loss : {total_loss}")
     return total_loss
-
-
 ```
-
 ## PLOTS:-
 * AND plot:
 ![and plot](plots/and.png)
@@ -83,4 +69,14 @@ class Perceptron:
 * OR plot: 
 
     ![or plot](plots/or.png)
+
+# Commands used-
+
+```bash
+git add . && git commit -m "docstring updated" && git push origin main
+```
+
+```bash
+cp Sample\ Notebooks/demo.ipynb .
+```
 
