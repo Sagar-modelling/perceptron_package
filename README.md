@@ -11,3 +11,6 @@ git add . && git commit -m "docstring updated" && git push origin main
 cp Sample\ Notebooks/demo.ipynb .
 ```
 [Github Handbook](https://guides.github.com/introduction/git-handbook/)
+
+## sample image
+![Sample Image](plots/and.png)
