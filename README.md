@@ -12,5 +12,11 @@ cp Sample\ Notebooks/demo.ipynb .
 ```
 [Github Handbook](https://guides.github.com/introduction/git-handbook/)
 
-## sample image
-![Sample Image](plots/and.png)
+## PLOTS:-
+* AND plot:
+![and plot](plots/and.png)
+
+* OR plot: 
+
+    ![or plot](plots/or.png)
+
