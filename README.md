@@ -1,6 +1,8 @@
 # perceptron_package
 Perceptron Implementation using OR,AND,XOR and NAND gates.
 
+# Info about perceptron(Single Layer Neural Network)
+<a href="https://analyticsindiamag.com/perceptron-is-the-only-neural-network-without-any-hidden-layer/">Visit analyticsindiamag.com!</a>
 # commands used-
 
 ```bash
