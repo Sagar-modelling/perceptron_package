@@ -82,6 +82,7 @@ from utils.model import class
 touch requirements.txt
 conda create -n sagar python==3.8 -y
 conda activate sagar
+pip freeze > requirements.txt
 pip install -r requirements.txt
 git add . && git commit -m "docstring updated" && git push origin main
 git checkout "committed id no" (to go to specific version)
