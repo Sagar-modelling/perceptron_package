@@ -75,7 +75,7 @@ class Perceptron:
 ```bash
 conda env list
 mkdir utils
-touch utils/__init__.py
+touch utils/__init__.py #to treat utility as a package
 touch utils/model.py
 touch utils/all_utils.py (keep all helper functions in all_utils folder)
 from utils.model import class
