@@ -89,6 +89,7 @@ git checkout "committed id no" (to go to specific version)
 
 #to see utils as a pckage, just type python in the terminal
 import utils
+utils.__version__ #check utils package version
 ```
 
 ```bash
