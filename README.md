@@ -86,6 +86,9 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 git add . && git commit -m "docstring updated" && git push origin main
 git checkout "committed id no" (to go to specific version)
+
+#to see utils as a pckage, just type python in the terminal
+import utils
 ```
 
 ```bash
